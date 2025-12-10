@@ -47,7 +47,7 @@ def _predict_from_dict(data: dict):
     for col in ["kyc_verified", "is_high_value"]:
         features[col] = features[col].map(bool_map).fillna(features[col])
 
-    # Coerce numeric columns and validate
+    #  numeric columns and validate
     for col in feature_cols:
         features[col] = pd.to_numeric(features[col], errors="coerce")
 
@@ -106,5 +106,15 @@ def predict_transaction_get(
         "is_high_value": is_high_value,
     }
 
-    # If any values are missing, FastAPI will return 422 for GET without query params.
+    # If any query params are missing, return a clear error (avoid confusing numeric coercion error)
+    missing_qs = [k for k, v in data.items() if v is None]
+    if missing_qs:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                f"Missing query parameters: {missing_qs}. "
+                "Provide all parameters or call POST /api/predict with a JSON body."
+            ),
+        )
+
     return _predict_from_dict(data)

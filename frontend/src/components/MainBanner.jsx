@@ -56,23 +56,24 @@ export default function MainBanner() {
       </div>
 
       {/* HERO SECTION */}
-      <section className="pb-20 mt-40 px-4 text-center">
+      <section id="home" className="pb-20 mt-40 px-4 text-center">
 
-        <h1 className="text-center whitespace-nowrap text-3xl md:text-4xl font-medium text-slate-50">
+        <h1 className="text-center whitespace-nowrap text-3xl md:text-4xl font-medium text-current">
           Seemless Transaction System For BFSI
         </h1>
 
-        <p className="text-md text-slate-200 mt-4">
+        <p className="text-md text-current mt-4">
           Unlock smarter workflows with AI tools designed to boost productivity.
         </p>
         <img
           src={hero}
           alt="hero"
-          className="block mx-auto mt-6 max-w-xs sm:max-w-sm lg:max-w-md animate-float drop-shadow-[0_0_60px_rgba(180,120,255,0.35)] "
+          className="block mx-auto mt-8 max-w-xs sm:max-w-sm lg:max-w-md animate-float drop-shadow-[0_0_60px_rgba(180,120,255,0.35)] "
         />
 
-        <div className="flex items-center gap-4 mt-5 text-lg justify-center">
-          <button className="bg-[#6043D2] text-black rounded-md px-10 h-14 active:scale-95 cursor-pointer font-bold mt-6 ">
+        <div className="flex items-center gap-4 mt-4 text-lg justify-center">
+          <button className="bg-[#6043D2] text-current rounded-md px-10 h-14 active:scale-95 cursor-pointer font-bold mt-6 shadow-lg hover:shadow-[0_0_20px_rgba(99,102,241,0.7)]
+                   transition-all duration-300 border-3 border-[#2e1f6b]">
             Get started
           </button>
         </div>

@@ -1,8 +1,12 @@
 import React from "react";
 import { HashLink } from 'react-router-hash-link'
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
+import { useNavigate } from "react-router-dom";
+
 
 const Navbar = ({ darkMode, setDarkMode }) => {
+  const navigate = useNavigate();
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 flex items-center px-6 py-6 border-b border-white/10
@@ -37,7 +41,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         </button>
 
         {/* Login */}
-        <button
+        <button onClick={() => navigate("/login")}
           className={`px-6 py-2.5 rounded-full font-bold text-lg shadow-lg transition-all duration-300 ${
             darkMode ? "bg-white text-black hover:bg-slate-200" : "bg-white text-black hover:bg-slate-200"
           }`}

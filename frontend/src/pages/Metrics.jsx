@@ -1,12 +1,12 @@
 import React from 'react'
 import SideBar from '../components/SideBar'
 
-const Dashboard = () => {
+const Metrics = () => {
   return (
     <div>
-      <SideBar />
+        <SideBar />
     </div>
   )
 }
 
-export default Dashboard
+export default Metrics

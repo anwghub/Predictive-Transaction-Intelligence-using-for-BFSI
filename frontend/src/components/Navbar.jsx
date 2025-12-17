@@ -17,10 +17,10 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         }`}
     >
       {/* Left */}
-      <h1 className="font-bold text-xl">Fraudly</h1>
+      <h1 className="font-bold text-2xl">Fraudly</h1>
 
       {/* Center */}
-      <div className="hidden md:flex flex-1 justify-center gap-8 font-bold">
+      <div className="hidden md:flex flex-1 justify-center gap-8 font-bold text-xl">
         <HashLink smooth to="/#home">Home</HashLink>
         <HashLink smooth to="/#about">About</HashLink>
         <HashLink smooth to="/#features">Features</HashLink>

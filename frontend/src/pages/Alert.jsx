@@ -1,12 +1,12 @@
 import React from 'react'
 import SideBar from '../components/SideBar'
 
-const Dashboard = () => {
+const Alert = () => {
   return (
     <div>
-      <SideBar />
+        <SideBar />
     </div>
   )
 }
 
-export default Dashboard
+export default Alert

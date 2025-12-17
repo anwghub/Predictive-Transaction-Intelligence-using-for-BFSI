@@ -7,6 +7,9 @@ import RegisterPage from "./pages/RegisterPage";
 import ForgotPasswordPage from "./pages/ForgotPassword";
 import ResetPasswordPage from "./pages/ResetPassowrd"
 import Dashboard from "./pages/Dashboard";
+import Predict from "./pages/Predict";
+import Metrics from "./pages/Metrics";
+import Alert from "./pages/Alert";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -14,8 +17,8 @@ function App() {
   return (
     <div
       className={`min-h-screen transition-all duration-500 ${darkMode
-          ? "bg-[linear-gradient(#2C0F4B,#704E95,#2C0F4B)] text-white"
-          : "bg-[linear-gradient(#C792FF,#FDFBFF,#C792FF)] text-black"
+        ? "bg-[linear-gradient(#2C0F4B,#704E95,#2C0F4B)] text-white"
+        : "bg-[linear-gradient(#C792FF,#FDFBFF,#C792FF)] text-black"
         }`}
     >
       {/* Navbar with darkMode toggle */}
@@ -28,7 +31,11 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot" element={<ForgotPasswordPage />} />
         <Route path="/reset" element={<ResetPasswordPage />} />
-         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/predict" element={<Predict />} />
+        <Route path="/metrics" element={<Metrics />} />
+        <Route path="/alert" element={<Alert />} />
+        <Route path="/history" element={<History />} />
 
       </Routes>
     </div>

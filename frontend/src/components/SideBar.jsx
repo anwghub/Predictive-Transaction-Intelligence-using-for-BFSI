@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const SideBar = () => {
 
   const navigate = useNavigate();
 
+
   return (
-    <div className='w-1/5 p-2 min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 flex justify-center items-center'>
-      <div className='font-bold text-xl text-center space-y-10'>
+    <div className='w-1/5 p-2 pt-25 h-screen bg-linear-to-r from-blue-500 to-purple-600 overflow-y-auto sticky top-0'>
+      <div className='font-bold text-xl text-left space-y-10 p-4'>
         <div className='pb-10 text-xl mt-16 flex gap-1 items-center'>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
             <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 0 1-1.875-1.875V8.625ZM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 0 1 3 19.875v-6.75Z" />

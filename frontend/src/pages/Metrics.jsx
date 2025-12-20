@@ -9,15 +9,19 @@ const Metrics = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 ">
           <div className="bg-white p-6 rounded-xl shadow h-300px">
             {/* Chart 1 */}
+            <h2 className='text-black'>Accuracy</h2>
           </div>
           <div className="bg-white p-6 rounded-xl shadow h-300px">
             {/* Chart 2 */}
+            <h2 className='text-black'>Prediction</h2>
           </div>
           <div className="bg-white p-6 rounded-xl shadow h-300px">
             {/* Chart 1 */}
+            <h2 className='text-black'>Recall</h2>
           </div>
           <div className="bg-white p-6 rounded-xl shadow h-300px">
             {/* Chart 2 */}
+            <h2 className='text-black'>Auc</h2>
           </div>
         </div>
       </div>

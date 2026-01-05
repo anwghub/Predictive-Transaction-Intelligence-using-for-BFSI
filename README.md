@@ -130,9 +130,8 @@ python src/preprocessing/train_test_split.py
 
 Creates:
 
-train.csv
-
-test.csv
+- train.csv
+- test.csv
 
 🤖 Machine Learning Model Training
 🔟 Train Fraud Detection Model
@@ -141,11 +140,11 @@ python src/ml/train_model.py
 
 Generates:
 
-src/ml/fraud_model.pkl
+- src/ml/fraud_model.pkl
 
-src/ml/scaler.pkl
+- src/ml/scaler.pkl
 
-src/ml/metrics.json
+- src/ml/metrics.json
 
 ▶️ Running the Backend Server
 1️⃣ Start FastAPI Server
@@ -172,3 +171,77 @@ Fetch all alert messages
 http://127.0.0.1:8000/api/alert
 
 ```
+---
+
+## Backend Milestone Completion
+### 🚩 Milestone 1 – Data Processing & Storage
+- ✔ Raw transaction ingestion
+- ✔ Data cleaning & feature engineering
+- ✔ SQLite database integration
+
+### 🚩 Milestone 2 – Machine Learning Pipeline
+- ✔ Train/Test split
+- ✔ Fraud classification model
+- ✔ Model evaluation metrics
+- ✔ Model persistence (PKL files)
+
+### 🚩 Milestone 3 – Real-Time Fraud Detection
+- ✔ Real-time prediction API
+- ✔ Rule-based fraud detection layer
+- ✔ Fraud alert storage
+- ✔ Gemini LLM-based risk explanation
+- ✔ Explainable AI output
+
+### 🚩 Milestone 4 – 
+-
+- 
+- 
+
+### 🧠 LLM Explainability (Gemini)
+
+- ✔️ Gemini API integration
+- ✔️ Natural language fraud explanation
+- ✔️ Graceful fallback if API key not configured
+
+### 🚨 Fraud Alert System
+
+- ✔️ `fraud_alerts` table created
+- ✔️ Automatic alert insertion on fraud detection
+- ✔️ Alert fields:
+- transaction_id
+- customer_id
+- risk_score
+- reason
+- timestamp
+
+### 🗄️ Database Enhancements
+
+- ✔️ Persistent alert storage
+- ✔️ Clean separation of transaction vs alert data
+
+### 🔐 Security & Config
+
+- ✔️ API key loaded via `.env`
+- ✔️ No hardcoded secrets
+- ✔️ Production-ready environment handling
+
+**Outcome:**  
+A **real-time, explainable fraud detection backend** ready for frontend integration.
+
+---
+
+## 🔮 Future Milestones 
+
+- JWT authentication
+- Admin alert dashboard
+- Kafka / Redis streaming
+- Docker & CI/CD
+- Auto rule discovery using LLMs
+
+---
+
+## 👨‍💻 Author
+
+**Anwesa Ghosh**  
+Backend Developer | ML & AI  
+Predictive_Transaction_Intelligence_using_for_BFSI – Infosys SpringBoard 6.0 Internship Project

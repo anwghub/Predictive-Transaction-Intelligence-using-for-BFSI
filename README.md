@@ -72,7 +72,7 @@ predictive-transaction-backend/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/anwghub/Predictive_Transaction_Intelligence_using_for_BFSI
 cd predictive-transaction-backend
 ```
 
@@ -124,9 +124,36 @@ This creates:
 8️⃣ Run Data Cleaning Pipeline
 python src/preprocessing/cleaning_pipeline.py
 
-9️⃣ Train-Test Split
-python src/preprocessing/train_test_split.py
+ 
+9️⃣ 📊 Exploratory Data Analysis (EDA) & Visualizations
 
+After completing data cleaning and preprocessing, **Exploratory Data Analysis (EDA)** was performed to understand transaction patterns and fraud behavior.
+
+As part of the EDA summarization, the following visualizations were generated and stored under the `graphs/` directory.
+
+### 📈 Generated Graphs
+
+| Graph File | Description |
+|-----------|-------------|
+| `fraud_vs_legit.png` | Shows the overall distribution of Fraud vs Legit transactions |
+| `amount_fraud_vs_nonfraud.png` | Compares average transaction amounts for fraud and non-fraud cases |
+| `transactions_by_channel.png` | Displays transaction volume across different channels |
+| `transactions_by_hour.png` | Highlights transaction frequency by hour of the day |
+
+### 🧠 Purpose of EDA Graphs
+
+- Identify behavioral differences between fraud and legitimate transactions  
+- Understand high-risk channels and time windows  
+- Support feature engineering for model training  
+- Provide insights for rule-based fraud detection (Milestone 3)
+
+📁 **Location:**
+```bash
+data/eda/graphs/
+```
+
+🔟 Train-Test Split
+python src/preprocessing/train_test_split.py
 
 Creates:
 
@@ -134,7 +161,7 @@ Creates:
 - test.csv
 
 🤖 Machine Learning Model Training
-🔟 Train Fraud Detection Model
+11 Train Fraud Detection Model
 python src/ml/train_model.py
 
 
@@ -146,7 +173,7 @@ Generates:
 
 - src/ml/metrics.json
 
-▶️ Running the Backend Server
+## Running the Backend Server
 1️⃣ Start FastAPI Server
 uvicorn main:app --reload
 
@@ -245,3 +272,4 @@ A **real-time, explainable fraud detection backend** ready for frontend integrat
 **Anwesa Ghosh**  
 Backend Developer | ML & AI  
 Predictive_Transaction_Intelligence_using_for_BFSI – Infosys SpringBoard 6.0 Internship Project
+

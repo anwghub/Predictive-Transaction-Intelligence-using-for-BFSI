@@ -7,13 +7,16 @@ Designed as a **production-ready fintech backend** with alerts, explainable AI, 
 
 ## 🚀 Features
 
-- 🔍 **ML-Based Fraud Prediction**
-- 📏 **Rule-Based Fraud Detection**
-- 🧠 **LLM Explainability (Google Gemini)**
-- 🚨 **Fraud Alert System**
-- 🗄️ **SQLite Database**
-- 📊 **Model Metrics Tracking**
-- ⚡ **FastAPI REST APIs**
+- 🔍 ML-Based Fraud Prediction
+- 📏 Rule-Based Fraud Detection
+- 🧠 LLM Explainability (Google Gemini)
+- 🚨 Fraud Alert System
+- 🗄️ SQLite Database
+- 📊 Model Metrics Tracking
+- ⚡ FastAPI REST APIs
+- 🔐 User Authentication System
+- 📈 Risk Trend Analytics
+- 🔄 Feedback Loop for Model Improvement
 
 ---
 
@@ -60,7 +63,7 @@ predictive-transaction-backend/
 │ │ └── gemini_client.py
 │ │
 │ └── database/
-│ ├── init_db.py
+│ ├── db.py
 │ └── transactions.db
 │
 └── requirements.txt
@@ -112,13 +115,14 @@ echo GOOGLE_API_KEY=your_gemini_api_key_here > .env
 🗄️ Database Setup
 ### 7️⃣ Initialize Database
 ```bash
-python src/database/init_db.py
+python src/database/db.py
 ```
 
 This creates:
 
 -- transactions table
 -- fraud_alerts table
+-- feedback table
 
 📊 Data Preprocessing Pipeline
 8️⃣ Run Data Cleaning Pipeline
@@ -185,6 +189,12 @@ http://127.0.0.1:8000
 
 🧪 Testing APIs (Postman)
 ```bash
+Authentication
+POST http://127.0.0.1:8000/api/auth/register
+POST http://127.0.0.1:8000/api/auth/login
+POST http://127.0.0.1:8000/api/auth/forgot-password
+POST http://127.0.0.1:8000/api/auth/reset-password
+
 Predict Transaction (POST)
 POST http://127.0.0.1:8000/api/predict
 
@@ -194,8 +204,23 @@ http://127.0.0.1:8000/api/transactions
 Fetch Model Performance Metrics (GET)
 http://127.0.0.1:8000/api/metrics
 
-Fetch all alert messages
+Fetch all alert messages (GET)
 http://127.0.0.1:8000/api/alert
+
+Get a particular transaction by id (GET)
+http://127.0.0.1:8000/api/transactions/{transaction_id}
+
+Get all recent transactions info (GET)
+GET http://127.0.0.1:8000/api/transactions/recent
+
+Analytics average risk score (GET)
+http://127.0.0.1:8000/api/transactions/analytics/risk-trend
+
+Feedback Loop (POST)
+http://127.0.0.1:8000/api/feedback
+
+Dataset Download (GET)
+http://127.0.0.1:8000/api/transactions/download/csv
 
 ```
 ---
@@ -205,6 +230,7 @@ http://127.0.0.1:8000/api/alert
 - ✔ Raw transaction ingestion
 - ✔ Data cleaning & feature engineering
 - ✔ SQLite database integration
+- ✔ EDA & visualization graphs
 
 ### 🚩 Milestone 2 – Machine Learning Pipeline
 - ✔ Train/Test split
@@ -220,9 +246,14 @@ http://127.0.0.1:8000/api/alert
 - ✔ Explainable AI output
 
 ### 🚩 Milestone 4 – 
--
-- 
-- 
+- ✔ Authentication (Register, Login, Forgot, Reset password)
+- ✔ ML + Rules + LLM fully integrated
+- ✔ Analytics APIs (risk trend, recent feed)
+- ✔ Feedback loop for future retraining
+- ✔ Dataset download API
+- ✔ End-to-end backend testing (Postman)
+- ✔ Dockerized backend 
+
 
 ### 🧠 LLM Explainability (Gemini)
 
@@ -259,8 +290,6 @@ A **real-time, explainable fraud detection backend** ready for frontend integrat
 
 ## 🔮 Future Milestones 
 
-- JWT authentication
-- Admin alert dashboard
 - Kafka / Redis streaming
 - Docker & CI/CD
 - Auto rule discovery using LLMs
@@ -272,4 +301,5 @@ A **real-time, explainable fraud detection backend** ready for frontend integrat
 **Anwesa Ghosh**  
 Backend Developer | ML & AI  
 Predictive_Transaction_Intelligence_using_for_BFSI – Infosys SpringBoard 6.0 Internship Project
+
 

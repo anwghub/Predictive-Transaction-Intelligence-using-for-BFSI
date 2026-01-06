@@ -63,6 +63,23 @@ def create_fraud_alerts_table():
     conn.close()
     print("Fraud alerts table ready.")
 
+def create_feedback_table():
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS feedback (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            transaction_id TEXT,
+            is_correct INTEGER,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+
+    conn.commit()
+    conn.close()
+    print("Feedback table ready.")
+
 
 def insert_processed_data(csv_path="data/processed/transactions_processed.csv"):
     df = pd.read_csv(csv_path)

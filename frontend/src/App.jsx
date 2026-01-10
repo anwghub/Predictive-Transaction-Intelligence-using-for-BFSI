@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import NavbarLogged from "./components/NavbarLogged";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ForgotPasswordPage from "./pages/ForgotPassword";
@@ -11,9 +12,11 @@ import Predict from "./pages/Predict";
 import Metrics from "./pages/Metrics";
 import Alert from "./pages/Alert";
 import History from "./pages/History";
+import { AppContext } from "./context/AppContext";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
+  const { isAuthenticated } = useContext(AppContext);
 
   return (
     <div
@@ -23,7 +26,11 @@ function App() {
         }`}
     >
       {/* Navbar with darkMode toggle */}
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      {isAuthenticated ? (
+        <NavbarLogged darkMode={darkMode} setDarkMode={setDarkMode} />
+      ) : (
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      )}
 
       {/* Pages */}
       <Routes>

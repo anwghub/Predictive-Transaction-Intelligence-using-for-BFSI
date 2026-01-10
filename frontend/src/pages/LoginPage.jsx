@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import login from "../assets/Login.png";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { setIsAuthenticated } = useContext(AppContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +18,8 @@ const LoginPage = () => {
       return;
     }
     setError("");
+    setIsAuthenticated(true);
+    navigate('/dashboard');
   };
 
   return (
@@ -59,7 +63,7 @@ const LoginPage = () => {
             <p className="font-semibold cursor-pointer" onClick={()=> navigate('/forgot')}>Forget Password?</p>
             <button
               type="submit"
-              className="w-full hover:bg-[#6043D2] text-white text-lg font-semibold py-3 rounded-md bg-[#281b5d] transition duration-300 shadow-2xl " onClick={()=> navigate('/dashboard')}
+              className="w-full hover:bg-[#6043D2] text-white text-lg font-semibold py-3 rounded-md bg-[#281b5d] transition duration-300 shadow-2xl "
             >
               Login
             </button>

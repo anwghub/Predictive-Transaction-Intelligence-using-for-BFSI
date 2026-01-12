@@ -53,15 +53,22 @@ def home():
 
 @app.on_event("startup")
 def run_pipeline_on_start():
-    #print("Running preprocessing pipeline...")
-    pipeline()
-    #print("Pipeline finished!")
-    create_train_test_split()
-    
-    create_transactions_table()
-    create_fraud_alerts_table()
-    create_feedback_table()
-    insert_processed_data()
-    train()
+    env = os.getenv("ENV", "production")
+
+    if env == "local":
+        print("Running preprocessing & training pipeline (LOCAL ONLY)")
+
+        pipeline()
+        create_train_test_split()
+
+        create_transactions_table()
+        create_fraud_alerts_table()
+        create_feedback_table()
+        insert_processed_data()
+
+        train()
+    else:
+        print("Production mode: skipping preprocessing & training")
+
     
 

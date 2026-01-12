@@ -54,7 +54,7 @@ def home():
 @app.on_event("startup")
 def run_pipeline_on_start():
     #print("Running preprocessing pipeline...")
-    #pipeline()
+    pipeline()
     #print("Pipeline finished!")
     #create_train_test_split()
     
